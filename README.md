@@ -2,7 +2,7 @@
 Various coding problems(Data Structures/Algorithms) I've solved form misc. websites
 
 This is a directory & compilation of the programming problems I've solved while learning. I've used lots of different 
-websites(HackerRank, CodingBat, TopCoder, CodingBat, etc). I'll try sorting things by website, and then inside those
+websites(HackerRank, CodingBat, TopCoder, etc). I'll try sorting things by website, and then inside those
 directories by category(BFS, sorting, Heaps, String Manipulation, etc). 
 
 There's a few reasons I'm doing this. 
