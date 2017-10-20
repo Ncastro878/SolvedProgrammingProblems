@@ -1,0 +1,24 @@
+def rot(input):
+    lister = input.splitlines()
+    
+    num = int(lister[0])
+    lister.remove(lister[0])
+    answer = ''
+    
+    for line in lister:
+        line_list = line.split()
+        #k = int(line_list[0])
+        word = line_list[1]
+        if line_list[0][0] == '-':
+            k = int(line_list[0][1])
+            answer += word[len(word)-k:] + word[:len(word)-k] + ' ' 
+        else:
+            k = int(line_list[0][0])
+            answer += word[k:] + word[:k] + ' '
+        
+        #if k >= 0:
+        #    answer += word[k:] + word[:k] + ' '
+        #else:
+        #    answer += word[:k] + word[k:] + ' ' 
+        
+    return answer

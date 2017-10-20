@@ -1,0 +1,29 @@
+def palin(input):
+    
+    lister = input.splitlines()
+    num = int(lister[0])
+    answer = ''
+    lister.remove(lister[0])
+
+    print(lister)
+
+    for i in range(num):
+        sentence = ''
+        for k in range(len(lister[i])):
+            if lister[i][k].isalpha():
+                sentence += lister[i][k].lower()
+        
+        check = ''
+        for j in range(len(sentence)-1, -1, -1):
+            if sentence[j].isalpha():
+                check += sentence[j].lower()
+            
+        print(sentence)
+        print(check)
+
+        if sentence == check:
+            answer += "Y "
+        else:
+            answer += "N "
+    
+    return answer

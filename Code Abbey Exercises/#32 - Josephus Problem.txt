@@ -1,0 +1,33 @@
+'''
+	This was fuckin hard. 
+	Review this later. very jumbled.
+'''
+
+def jos(input):
+    list_ = input.split()
+    list_ = [int(num) for num in list_]
+    n = list_[0]
+    k = list_[1]
+
+    count = 1
+    last_p = 0
+    A = [num for num in range(1, n+1)]
+    lister = []
+    print(A)
+
+    while(len(A) != 1):
+        for i in range(len(A)):
+            if count%k == 0:
+                lister.append(A[i])
+                last_p = i
+            count += 1
+            old_count = count
+        count = len(A) - last_p
+        if last_p == 0: count = old_count
+        print("Count: " + str(count) + " Last_p: " + str(last_p))
+        #count = count - (last_p+1) # original count eqtn- failed
+        A = [num for num in A if num not in lister]
+        last_p = 0
+        print("A consists of " + str(A))
+
+    print(A[0])

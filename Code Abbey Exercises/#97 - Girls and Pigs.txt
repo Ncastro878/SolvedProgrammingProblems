@@ -1,0 +1,33 @@
+
+# It's kind of just a brute force check of 
+# all possibilities.
+
+def pig(input):
+    lister = input.splitlines()
+    lister.remove(lister[0])
+    answer = ''
+    
+    for line in lister:
+        line = line.split()
+        line = [int(num) for num in line]
+        #print(line)
+        
+        count = 1
+        solution_count = 0
+        legs = line[0]
+        breasts = line[1]
+        
+        for i in range(4,legs,4):
+            new_b = legs - i
+            PB = breasts - new_b
+            test1 = PB % count
+            halved = PB / count 
+            #print(i)
+            #print("PB is: " + str(PB) +  ". And new_b is:" + str(new_b))
+            if((test1 == 0) and (halved%2 == 0)):
+                #print("SOLUTION FOUND -(PB, COUNT, NEWB, I) " + str(PB) +' ' + str(count) + ' ' +
+                str(new_b) + ' '+ str(halved) )
+                solution_count += 1
+            count += 1    
+        answer += str(solution_count) + ' '
+    return answer

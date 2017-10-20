@@ -1,0 +1,29 @@
+def fib(input):
+    lister = input.split()
+    lister = [int(num) for num in lister]
+    lister.remove(lister[0])
+    max_num = max(lister)
+
+    fiblist = []
+    answer = []
+    fiblist.append(0)
+    fiblist.append(1)
+
+    i = 0
+    yes = True
+    while (yes == True):
+
+        nsum = fiblist[i] + fiblist[i + 1]
+
+        fiblist.append(nsum)
+        i += 1
+
+        if nsum == max_num:
+            yes = False
+
+    for num in lister:
+        answer.append(fiblist.index(num))
+
+    answer = [str(x) for x in answer]
+    str_ = ' '.join(answer)
+    print(str_)

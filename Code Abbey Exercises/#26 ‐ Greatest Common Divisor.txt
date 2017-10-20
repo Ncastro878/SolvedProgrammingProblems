@@ -1,0 +1,24 @@
+def euler(input):
+    nums = input.split()
+    nums.remove(nums[0])
+    answers = []
+    #List comprehension might be better
+    #nums = [int(num) for num in nums]
+    for i in range(0, len(nums), 2):
+        a = int(nums[i])
+        b = int(nums[i+1])
+        a_orig = int(a)
+        b_orig = int(b)
+        
+        while(not a == b):
+            if a < b:
+                b = b - a
+            elif b < a:
+                a = a - b
+            else:
+                break
+        
+	gcd = a
+        lcm = int(a_orig * b_orig / gcd)
+        answers.append('(' + str(gcd) + ' ' + str(lcm) + ') ')
+    return ''.join(answers)

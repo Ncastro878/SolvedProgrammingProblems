@@ -1,0 +1,9 @@
+def reverse(input):
+        
+    s = input
+    new_s = ''
+   
+    for i in range(len(s)-1,-1,-1):
+        new_s += s[i]
+            
+    return new_s

@@ -1,0 +1,25 @@
+def bubble(input):
+
+    lister = input.split()
+    lister = [int(num) for num in lister]
+    lister.remove(lister[-1])
+    counter = 0
+    
+    for i in range(len(lister)-1):
+ 
+        if lister[i] > lister[i+1]:
+            temp = lister[i+1]
+            lister[i+1] = lister[i]
+            lister[i] = temp
+            counter += 1
+                
+    #check sum array- previous method
+    summ = 0
+    for num in lister:
+        summ += num
+    
+        summ = summ*113
+    
+        summ = summ%10000007 
+    
+    print(str(counter) + ' ' + str(summ))

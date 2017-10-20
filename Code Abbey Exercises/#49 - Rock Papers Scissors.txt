@@ -1,0 +1,28 @@
+def rps(input):
+
+    lister = input.splitlines()
+    num = lister[0]
+    lister.remove(lister[0])
+    answer = ''
+
+    #    [   L      R   L       R    L    R            ]       
+    games= ['SP', 'PS', 'PR', 'SR','RS','RP' ,'RR','PP','SS',]
+    
+    for line in lister:
+        game = line.split()
+        for match in game:
+            counter = 0
+            if match[0] == match[1]:
+                pass
+            #0 , 2, left wins, counter+ 1
+            elif games.index(match) % 2 == 0:
+                counter += 1
+            #right wins
+            else:
+                counter -= 1
+            
+        if counter > 0:
+            answer += "1 "
+        elif counter <0:
+            answer += "2 "
+    return answer

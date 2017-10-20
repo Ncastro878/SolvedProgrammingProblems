@@ -1,0 +1,12 @@
+def summ(input):
+    lister = input.split()
+    lister = [int(num) for num in lister]
+    
+    lister.remove(lister[0])
+    answer = ''
+    
+    for i in range(0, len(lister), 2):
+        answer += str(lister[i] + lister[i+1]) + ' '
+        
+        
+    return answer

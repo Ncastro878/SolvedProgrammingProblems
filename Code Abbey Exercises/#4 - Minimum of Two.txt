@@ -1,0 +1,14 @@
+def two(input):
+    
+    lister = input.splitlines()
+    lister.remove(lister[0])
+    answer = ''
+    
+    for line in lister:
+        nums = line.split()
+        nums = [int(num) for num in nums]
+        minm = min(nums[0], nums[1])
+        print(nums)
+        answer  += str(minm) + ' '
+        
+    return answer

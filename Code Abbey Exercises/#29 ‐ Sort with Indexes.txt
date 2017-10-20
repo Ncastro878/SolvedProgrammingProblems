@@ -1,0 +1,27 @@
+def sorter(input):
+    nums = input.split()
+    nums.remove(nums[0])
+    
+    nums = [int(num) for num in nums]
+    nums_orig = [num for num in nums]
+    #Why can't i do this?  
+    #nums_orig = nums
+    #It seems to put them in order
+    answer = ''
+    
+    n = len(nums)
+    k = 0
+    
+    for i in range(n):
+
+        for j in range((n-1)-k):
+            temp = nums[j]
+            if nums[j] > nums[j+1]:
+                nums[j] = nums[j+1]
+                nums[j+1] = temp
+        k += 1
+    
+    for num in nums:
+        answer += str(nums_orig.index(num) + 1) + ' '
+        
+    return answer

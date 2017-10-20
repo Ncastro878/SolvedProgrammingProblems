@@ -1,0 +1,21 @@
+def tri(input):
+    
+    lister = input.splitlines()
+    num = lister[0]
+    lister.remove(lister[0])
+    answer = ''
+    
+    for line in lister:
+        line_list = line.split()
+        line_list = [int(num) for num in line_list]
+        a, c = min(line_list), max(line_list)
+        
+        line_list.remove(a)
+        line_list.remove(c)
+        b = line_list[0]
+        
+        if a + b >= c :
+            answer += '1 '
+        else:
+            answer += '0 '
+    return answer

@@ -1,0 +1,25 @@
+def train(input):
+	
+	#The key was finding the right formula
+	#Solving for h, the hour in time when both bikers(a,b) would be 
+	# at a distance that add up to S(the distance between both cities)
+	# then multiply h times biker-a: the distance from the first city
+	# next was just formatting it all. 
+    lister = input.splitlines()
+    lister.remove(lister[0])
+    answer = ''
+    
+    for line in lister:
+        line_list = line.split()
+        y = float(line_list[0])
+        a = float(line_list[1])
+        b = float(line_list[2])
+        #print("Here are the values: a-%f, b- %f, y-%f".format( a, b, y))
+        x = y / (a + b)
+        x = x*a
+        
+        if x.is_integer():
+            answer += str(int(x)) + ' '
+        else:
+            answer += "{0:.7f}".format(x) + ' '
+    return answer

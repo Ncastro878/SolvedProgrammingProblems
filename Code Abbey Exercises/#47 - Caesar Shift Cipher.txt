@@ -1,0 +1,26 @@
+def cipher(input):
+    
+    lister = input.splitlines()
+    abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    abc = list(abc)
+    #nums = lister[0]
+    #print(lister[0])
+    nums = lister[0].split()
+    nums = [int(num) for num in nums]
+    print(nums)
+    answer = ''
+    
+    for i in range(1,len(lister)):
+        for letter in lister[i]:
+            if letter.isalpha():
+                x = (abc.index(letter)) - nums[1]
+                if x < 0:
+                    answer += abc[26 + x] 
+                else:
+                    answer += abc[x] 
+                
+            else:
+                answer += letter
+        answer += ' '
+        
+    return answer
