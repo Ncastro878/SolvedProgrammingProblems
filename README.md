@@ -11,3 +11,5 @@ There's a few reasons I'm doing this.
 - Review old concepts & how I learned/solved them
 - Practice committing and maintaining a git/github repo
 - Have problems to show other friends/programmers/employers for critiques or assessment
+
+![DS&Algs bible](/clrs.jpg)
